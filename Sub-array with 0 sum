@@ -1,0 +1,24 @@
+public class Solution {
+    public int solve(int[] A) {
+        
+        HashSet<Long> set = new HashSet<>();
+        set.add(0L);
+        
+        long presum = 0;
+        for(int i=0; i<A.length; i++)
+        {
+            presum += A[i];
+            if(!set.contains(presum))
+            {
+                set.add(presum);
+            }
+            else
+            {
+                return 1;
+            }
+        }
+        
+        
+        return 0;
+    }
+}
