@@ -1,0 +1,21 @@
+public class Solution {
+    public String solve(int[] A) {
+        
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        
+        for(int i=0; i<A.length; i++)
+        {
+            map.put(A[i], map.getOrDefault(A[i], 0)+1);
+        }
+        ArrayList<Integer> list = new ArrayList<Integer>(map.keySet());
+        
+        if(map.size() == 2)
+        {
+            if(map.get(list.get(0)) == map.get(list.get(1)))
+            {
+                return "WIN";
+            }
+        }
+       return "LOSE";
+    }
+}
