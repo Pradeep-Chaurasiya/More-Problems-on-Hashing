@@ -1,0 +1,45 @@
+public class Solution {
+    public String solve(String A) {
+        HashMap<String, String> monthmap = new HashMap<String, String>();
+        
+        monthmap.put("Jan", "01");
+        monthmap.put("Feb", "02");
+        monthmap.put("Mar", "03");
+        monthmap.put("Apr", "04");
+        monthmap.put("May", "05");
+        monthmap.put("Jun", "06");
+        monthmap.put("Jul", "07");
+        monthmap.put("Aug", "08");
+        monthmap.put("Sep", "09");
+        monthmap.put("Oct", "10");
+        monthmap.put("Nov", "11");
+        monthmap.put("Dec", "12");
+        
+       String arr[] = A.split(" "); 
+       String S = "";
+       
+       S += arr[2];
+       S += "-";
+       
+       String m = "";
+       m += arr[1];
+       
+       S += monthmap.get(m);
+       S += "-";
+       
+       String d = "";
+       d += arr[0];
+       if(d.length() == 4)
+       {
+           S += d.charAt(0);
+           S += d.charAt(1);
+       }
+       else
+       {
+           S += "0";
+           S += d.charAt(0);
+       }
+          
+        return S;
+    }
+}
